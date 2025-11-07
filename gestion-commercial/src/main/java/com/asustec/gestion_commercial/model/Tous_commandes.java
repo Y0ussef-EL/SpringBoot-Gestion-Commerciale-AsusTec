@@ -1,21 +1,21 @@
 package com.asustec.gestion_commercial.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.Date;
 
 @Entity
 public class Tous_commandes {
     @Id
-    private int codeTousCmd;
+    @Column(unique = true, nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long codeTousCmd;
     @Column()
-    private int codeCmd;
+    private Long codeCmd;
     @Column(length = 20, nullable = false)
     private String client;
     @Column()
-    private int codePdt;
+    private Long codePdt;
     @Column()
     private int qteCmd;
     @Column()
@@ -24,21 +24,29 @@ public class Tous_commandes {
 
     public Tous_commandes() {
     }
+    public Tous_commandes(Long codeCmd, String client, Long codePdt, int qteCmd, Date dateCmd){
+        this.codeCmd = codeCmd;
+        this.client = client;
+        this.codePdt = codePdt;
+        this.qteCmd = qteCmd;
+        this.dateCmd = dateCmd;
+
+    }
 
 
-    public int getCodeTousCmd() {
+    public Long getCodeTousCmd() {
         return codeTousCmd;
     }
 
-    public void setCodeTousCmd(int codeTousCmd) {
+    public void setCodeTousCmd(Long codeTousCmd) {
         this.codeTousCmd = codeTousCmd;
     }
 
-    public int getCodeCmd() {
+    public Long getCodeCmd() {
         return codeCmd;
     }
 
-    public void setCodeCmd(int codeCmd) {
+    public void setCodeCmd(Long codeCmd) {
         this.codeCmd = codeCmd;
     }
 
@@ -50,11 +58,11 @@ public class Tous_commandes {
         this.client = client;
     }
 
-    public int getCodePdt() {
+    public Long getCodePdt() {
         return codePdt;
     }
 
-    public void setCodePdt(int codePdt) {
+    public void setCodePdt(Long codePdt) {
         this.codePdt = codePdt;
     }
 

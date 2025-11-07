@@ -1,4 +1,8 @@
 package com.asustec.gestion_commercial.repository;
 
-public interface Tous_commandesRepository {
+import com.asustec.gestion_commercial.model.Tous_commandes;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface Tous_commandesRepository extends JpaRepository<Tous_commandes,Long> {
+
 }

@@ -1,13 +1,10 @@
 package com.asustec.gestion_commercial;
 
-import com.asustec.gestion_commercial.model.Produit;
 import com.asustec.gestion_commercial.repository.ProduitRepository;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import java.util.List;
 
 @SpringBootApplication
 public class GestionCommercialApplication implements CommandLineRunner {
@@ -17,15 +14,15 @@ public class GestionCommercialApplication implements CommandLineRunner {
 
     }
 
-    @Autowired
-    ProduitRepository produitRepository;
+    //@Autowired
+    //ProduitRepository produitRepository;
 
 
     @Override
     public void run(String... args) throws Exception {
         System.out.println("Welcome to Gestion Commercial Application");
 
-        List<Produit> produits = List.of(
+        /*List<Produit> produits = List.of(
                 new Produit("BMW 5 Series",
                         "The BMW 5 Series combines elegance, innovation, and performance in a refined executive sedan. With its sleek design and cutting-edge technology, it delivers both comfort and sportiness.",
                         500000.00),
@@ -69,7 +66,7 @@ public class GestionCommercialApplication implements CommandLineRunner {
 
         produitRepository.saveAll(produits);
 
-        System.out.println("✅ Successfully inserted " + produits.size() + " cars into the database!");
+        System.out.println("✅ Successfully inserted " + produits.size() + " cars into the database!");*/
     }
 
 }
